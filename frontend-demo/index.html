@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revue Congolaise de Théologie Protestante | UPC</title>
+  <meta name="description" content="Revue Congolaise de Théologie Protestante — Publication de l'UPC. Articles en théologie, études bibliques, éthique chrétienne et histoire de l'Église.">
+  <link rel="icon" href="images/logo_upc.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col page-template-2">
+  <div class="site-header-sticky-wrap">
+    <div class="topbar-utility">
+      <div class="container flex justify-between items-center">
+        <div class="topbar-social">
+          <a href="#" aria-label="Facebook"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a>
+        </div>
+        <div class="topbar-links flex items-center gap-4">
+          <a href="login.html">Connexion</a>
+          <a href="register.html">Inscription</a>
+          <div class="dropdown lang-dropdown">
+            <a href="#" class="lang-select" aria-haspopup="true" aria-expanded="false" id="lang-toggle">
+              <span class="lang-current">FR</span><span aria-hidden="true">▼</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="lang-toggle">
+              <a href="#">Français</a>
+              <a href="#">English</a>
+              <a href="#">Lingala</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="container inner flex justify-between">
+        <a href="index.html" class="logo">
+          <img src="images/logo_upc.png" alt="Logo UPC">
+          <div class="logo-text">
+            <p class="title">Revue Congolaise de Théologie Protestante</p>
+            <p class="sub">Université Protestante au Congo</p>
+          </div>
+        </a>
+        <nav class="nav-desktop">
+          <a href="index.html">Accueil</a>
+          <div class="dropdown">
+            <a href="presentation.html">À propos <span aria-hidden="true">▼</span></a>
+            <div class="dropdown-menu">
+              <a href="presentation.html">Présentation</a>
+              <a href="comite.html">Comité éditorial</a>
+              <a href="politique-editoriale.html">Politique éditoriale</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="publications.html">Articles <span aria-hidden="true">▼</span></a>
+            <div class="dropdown-menu">
+              <a href="publications.html">Publications</a>
+              <a href="instructions-auteurs.html">Instructions aux auteurs</a>
+            </div>
+          </div>
+          <div class="dropdown dropdown-badge">
+            <a href="archives.html">Archives <span aria-hidden="true">▼</span></a>
+            <div class="dropdown-menu">
+              <a href="archives.html">Volumes &amp; numéros</a>
+              <a href="actualites.html">Actualités</a>
+            </div>
+          </div>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <span class="header-desk-actions flex items-center gap-2">
+            <form action="search.html" method="get" class="flex items-center gap-1" role="search">
+              <input type="search" id="header-search-input" name="q" placeholder="Mot-clé, auteur, titre..." class="input input-sm" style="width: 180px;" aria-label="Rechercher">
+              <button type="submit" class="btn btn-icon btn-outline" aria-label="Rechercher"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#search"/></svg></button>
+            </form>
+            <a href="login.html" class="btn btn-sm btn-accent">Soumettre un article</a>
+          </span>
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#menu"/></svg></button>
+        </div>
+      </div>
+      <div id="nav-mobile" class="nav-mobile" aria-hidden="true">
+        <div class="container flex flex-col gap-1">
+          <a href="index.html">Accueil</a>
+          <a href="presentation.html">À propos</a>
+          <div class="sub">
+            <a href="presentation.html">Présentation</a>
+            <a href="comite.html">Comité éditorial</a>
+            <a href="politique-editoriale.html">Politique éditoriale</a>
+          </div>
+          <a href="publications.html">Articles</a>
+          <div class="sub">
+            <a href="publications.html">Publications</a>
+            <a href="instructions-auteurs.html">Instructions aux auteurs</a>
+          </div>
+          <a href="archives.html">Archives</a>
+          <div class="sub">
+            <a href="archives.html">Volumes &amp; numéros</a>
+            <a href="actualites.html">Actualités</a>
+          </div>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+          <div class="lang-mobile flex items-center gap-2" style="padding: 0.5rem 0;">
+            <span class="text-sm">FR</span>
+            <a href="#">Français</a>
+            <a href="#">English</a>
+            <a href="#">Lingala</a>
+          </div>
+          <div class="actions">
+            <a href="login.html" class="btn btn-outline-primary">Connexion</a>
+            <a href="author/soumettre.html" class="btn btn-accent">Soumettre un article</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero : 2 colonnes, image livre + texte -->
+  <section class="hero-template">
+    <div class="container hero-template-inner">
+      <div class="hero-featured">
+        <div class="hero-book-wrap" aria-hidden="true">
+          <div class="hero-book-spine"></div>
+          <div class="hero-featured-card">
+            <div class="hero-featured-img">
+              <img src="images/revue-cover-upc.jpg" alt="Revue Congolaise de Théologie Protestante">
+              <div class="hero-featured-overlay">
+                <h2 class="font-serif">Article à la une</h2>
+                <p id="hero-numero-text">Volume 28 - Numéro 1, 2025</p>
+              </div>
+            </div>
+            <div class="hero-featured-ribbon">
+              <span>Voir le dernier numéro</span>
+              <a href="archives.html" id="hero-ribbon-link" class="ribbon-link">→</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-welcome">
+        <p class="hero-welcome-label">Bienvenue</p>
+        <h1 class="font-serif hero-welcome-title">Nous accueillons les derniers articles de recherche en théologie</h1>
+        <div class="divider hero-welcome-line"></div>
+        <p class="hero-welcome-text">La Revue Congolaise de Théologie Protestante publie des travaux scientifiques en théologie, études bibliques, éthique chrétienne et histoire de l'Église, avec un accent sur les contextes africains.</p>
+        <a href="publications.html" class="link-read-more">Lire la suite →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu principal + sidebar -->
+  <div class="main-wrap">
+    <div class="container main-wrap-inner">
+      <div class="content-main">
+        <!-- Choix de la rédaction -->
+        <section class="section-block section-editors-pick">
+          <div class="section-block-head flex justify-between items-center flex-wrap gap-2">
+            <h2 class="font-serif section-block-title">Choix de la rédaction</h2>
+            <div class="section-block-nav flex items-center gap-2">
+              <button type="button" class="btn-carousel btn-prev" aria-label="Précédent"><span>‹</span></button>
+              <a href="publications.html" class="link-view-all">Voir tout</a>
+              <button type="button" class="btn-carousel btn-next" aria-label="Suivant"><span>›</span></button>
+            </div>
+          </div>
+          <div class="search-bar-inline">
+            <form action="search.html" method="get" class="flex gap-2 items-center w-full" role="search">
+              <label for="home-search" class="sr-only">Rechercher un article ou un numéro</label>
+              <input type="search" id="home-search" name="q" placeholder="Rechercher un article..." class="search-input flex-1">
+              <button type="submit" class="btn btn-primary btn-search-submit" aria-label="Rechercher"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#search"/></svg></button>
+            </form>
+          </div>
+          <div id="featured-article-card" class="featured-article-card">
+            <div class="featured-article-img"><img src="images/revue-cover-upc.jpg" alt=""></div>
+            <div class="featured-article-body">
+              <p class="featured-article-author"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#user"/></svg> Revue Congolaise de Théologie Protestante</p>
+              <h3 class="font-serif featured-article-title"><a href="publications.html">Découvrez les publications</a></h3>
+              <p class="featured-article-excerpt">Consultez les articles de la Revue Congolaise de Théologie Protestante.</p>
+              <a href="publications.html" class="btn btn-outline btn-view-article">Voir les articles</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Numéros précédents -->
+        <section class="section-block section-previous-issues">
+          <div class="section-block-head flex justify-between items-center flex-wrap gap-2">
+            <h2 class="font-serif section-block-title">Numéros précédents</h2>
+            <div class="section-block-nav flex items-center gap-2">
+              <button type="button" class="btn-carousel btn-prev" aria-label="Précédent"><span>‹</span></button>
+              <a href="archives.html" class="link-view-all">Voir tout</a>
+              <button type="button" class="btn-carousel btn-next" aria-label="Suivant"><span>›</span></button>
+            </div>
+          </div>
+          <div class="previous-issues-layout">
+            <div class="issues-years">
+              <p class="issues-years-title">Par année :</p>
+              <ul>
+                <li><a href="archives.html?year=2025">2025</a></li>
+                <li><a href="archives.html?year=2024">2024</a></li>
+                <li><a href="archives.html?year=2023">2023</a></li>
+                <li><a href="archives.html?year=2022">2022</a></li>
+                <li><a href="archives.html?year=2021">2021</a></li>
+                <li><a href="archives.html">Toutes les archives</a></li>
+              </ul>
+            </div>
+            <div class="issues-carousel-wrap">
+              <div class="issues-carousel" id="issues-carousel">
+                <!-- Rempli par JS ou laisser vide avec fallback -->
+                <article class="issue-card">
+                  <div class="issue-card-img"><img src="images/revue-cover-upc.jpg" alt=""></div>
+                  <p class="issue-card-author"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#user"/></svg> Revue</p>
+                  <h4 class="font-serif issue-card-title"><a href="publications.html">Consultez les articles</a></h4>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- À paraître -->
+        <section class="section-block section-coming-in">
+          <div class="section-block-head flex justify-between items-center flex-wrap gap-2">
+            <h2 class="font-serif section-block-title">À paraître 2026</h2>
+            <div class="section-block-nav flex items-center gap-2">
+              <button type="button" class="btn-carousel btn-prev" aria-label="Précédent"><span>‹</span></button>
+              <a href="actualites.html" class="link-view-all">Voir tout</a>
+              <button type="button" class="btn-carousel btn-next" aria-label="Suivant"><span>›</span></button>
+            </div>
+          </div>
+          <div class="coming-blocks">
+            <a href="author/soumettre.html" class="coming-block coming-block-1">
+              <span class="coming-block-label">Appel à articles</span>
+              <span class="coming-block-title">Volume 29 - Numéro 1</span>
+            </a>
+            <a href="actualites.html" class="coming-block coming-block-2">
+              <span class="coming-block-label">Actualités</span>
+              <span class="coming-block-title">Colloque Théologie & Société</span>
+            </a>
+            <a href="archives.html" class="coming-block coming-block-3">
+              <span class="coming-block-label">Archives</span>
+              <span class="coming-block-title">Numéros disponibles</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Grille des couvertures -->
+        <section class="section-block section-covers">
+          <h2 class="font-serif section-block-title">Numéros de la revue</h2>
+          <div class="covers-grid" id="covers-grid">
+            <a href="archives.html" class="cover-card">
+              <div class="cover-card-img"><img src="images/revue-cover-upc.jpg" alt=""></div>
+              <p class="cover-card-title">Numéro 1</p>
+            </a>
+            <a href="archives.html" class="cover-card">
+              <div class="cover-card-img cover-placeholder"><span>+</span></div>
+              <p class="cover-card-title">Toutes les archives</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- Actualités & Annonces -->
+        <section class="section-block section-news">
+          <div class="section-block-head flex justify-between items-center flex-wrap gap-2">
+            <h2 class="font-serif section-block-title">Actualités & Annonces</h2>
+            <div class="section-block-nav flex items-center gap-2">
+              <button type="button" class="btn-carousel btn-prev" aria-label="Précédent"><span>‹</span></button>
+              <a href="actualites.html" class="link-view-all">Voir tout</a>
+              <button type="button" class="btn-carousel btn-next" aria-label="Suivant"><span>›</span></button>
+            </div>
+          </div>
+          <div class="news-cards">
+            <article class="news-card">
+              <div class="news-card-img"><img src="images/revue-cover-upc.jpg" alt=""></div>
+              <p class="news-card-date"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#calendar"/></svg> 15 janvier 2026</p>
+              <h3 class="font-serif news-card-title"><a href="publications.html">Publication des derniers numéros</a></h3>
+              <p class="news-card-excerpt">Consultez les numéros de la revue en ligne.</p>
+              <a href="archives.html" class="link-read-more">Lire la suite →</a>
+            </article>
+            <article class="news-card">
+              <div class="news-card-img"><img src="images/revue-cover-upc.jpg" alt=""></div>
+              <p class="news-card-date"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#calendar"/></svg> 10 décembre 2025</p>
+              <h3 class="font-serif news-card-title"><a href="actualites.html">Appel à contributions pour le Volume 29</a></h3>
+              <p class="news-card-excerpt">La rédaction lance l'appel à articles pour le prochain volume.</p>
+              <a href="author/soumettre.html" class="link-read-more">Lire la suite →</a>
+            </article>
+            <article class="news-card">
+              <div class="news-card-img"><img src="images/revue-cover-upc.jpg" alt=""></div>
+              <p class="news-card-date"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#calendar"/></svg> 1er novembre 2025</p>
+              <h3 class="font-serif news-card-title"><a href="actualites.html">Colloque Théologie et société en Afrique</a></h3>
+              <p class="news-card-excerpt">La Faculté de Théologie organise un colloque international.</p>
+              <a href="actualites.html" class="link-read-more">Lire la suite →</a>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar droite -->
+      <aside class="sidebar-right">
+        <div class="widget widget-stats">
+          <h3 class="widget-title">La revue en chiffres</h3>
+          <div class="widget-stats-row">
+            <span class="widget-stats-value" id="stats-articles">—</span>
+            <span class="widget-stats-label">Articles publiés</span>
+          </div>
+          <div class="widget-stats-row">
+            <span class="widget-stats-value" id="stats-volumes">—</span>
+            <span class="widget-stats-label">Volumes</span>
+          </div>
+          <div class="widget-stats-row">
+            <span class="widget-stats-value" id="stats-years">28+</span>
+            <span class="widget-stats-label">Années de publication</span>
+          </div>
+        </div>
+        <div class="widget widget-notice">
+          <h3 class="widget-title">Annonces</h3>
+          <ul class="notice-list">
+            <li><a href="archives.html">Publications et numéros en ligne.</a></li>
+            <li><a href="author/soumettre.html">Appel à articles pour le Volume 29.</a></li>
+            <li><a href="actualites.html">Colloque Théologie et société.</a></li>
+            <li><a href="instructions-auteurs.html">Instructions aux auteurs</a></li>
+          </ul>
+        </div>
+        <div class="widget widget-cta">
+          <div class="widget-cta-icon"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#book"/></svg></div>
+          <h3 class="widget-title">Participez à la revue</h3>
+          <p class="widget-cta-text">Soumettez vos articles et contribuez au rayonnement de la recherche théologale en Afrique.</p>
+          <a href="author/soumettre.html" class="btn btn-primary btn-sm">Soumettre un article</a>
+        </div>
+        <div class="widget widget-question">
+          <h3 class="widget-title widget-title-bar">Question de la semaine</h3>
+          <p class="widget-question-text">Quel thème souhaiteriez-vous voir davantage traité dans la revue ?</p>
+          <form class="widget-poll" id="widget-poll">
+            <label class="poll-option"><input type="radio" name="question_week" value="1"> Études bibliques</label>
+            <label class="poll-option"><input type="radio" name="question_week" value="2"> Théologie systématique</label>
+            <label class="poll-option"><input type="radio" name="question_week" value="3"> Éthique chrétienne</label>
+            <label class="poll-option"><input type="radio" name="question_week" value="4"> Histoire de l'Église</label>
+            <button type="submit" class="btn btn-outline btn-sm mt-4">Envoyer</button>
+          </form>
+        </div>
+        <div class="widget widget-newsletter">
+          <div class="widget-newsletter-bg"></div>
+          <h3 class="widget-title widget-title-light">Alertes & actualités</h3>
+          <p class="widget-newsletter-text">Recevez les dernières parutions et annonces par email.</p>
+          <div id="newsletter-message" class="text-sm mb-2" aria-live="polite"></div>
+          <form class="widget-newsletter-form" id="newsletter-form" action="#" method="post">
+            <input type="email" name="email" placeholder="Votre adresse email" required class="newsletter-input" aria-label="Email">
+            <button type="submit" class="btn btn-accent newsletter-btn">S'inscrire</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Une plateforme complète pour la recherche théologale -->
+  <section class="section bg-background">
+    <div class="container">
+      <div class="section-title text-center mb-6">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-balance">Une plateforme complète pour la recherche théologale</h2>
+        <div class="divider center"></div>
+        <p class="text-muted text-lg" style="max-width: 42rem; margin: 0 auto;">De la soumission à la publication, notre plateforme accompagne chaque étape du processus éditorial scientifique.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#upload"/></svg></div>
+          <h3 class="font-serif text-lg font-bold mb-2">Soumission en ligne</h3>
+          <p class="text-muted text-sm leading-relaxed">Soumettez vos articles directement via notre plateforme. Formats acceptés : PDF, Word, LaTeX.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#user"/></svg></div>
+          <h3 class="font-serif text-lg font-bold mb-2">Évaluation par les pairs</h3>
+          <p class="text-muted text-sm leading-relaxed">Processus d'évaluation rigoureux en double aveugle par des experts en théologie.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#book"/></svg></div>
+          <h3 class="font-serif text-lg font-bold mb-2">Publication & Archivage</h3>
+          <p class="text-muted text-sm leading-relaxed">Organisation en volumes et numéros avec attribution de DOI pour chaque article.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#file-text"/></svg></div>
+          <h3 class="font-serif text-lg font-bold mb-2">Accès aux PDFs</h3>
+          <p class="text-muted text-sm leading-relaxed">Téléchargez les articles individuels ou les numéros complets au format PDF.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></div>
+          <h3 class="font-serif text-lg font-bold mb-2">Visibilité internationale</h3>
+          <p class="text-muted text-sm leading-relaxed">Indexation académique pour une diffusion maximale de la recherche théologale.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#search"/></svg></div>
+          <h3 class="font-serif text-lg font-bold mb-2">Recherche avancée</h3>
+          <p class="text-muted text-sm leading-relaxed">Retrouvez facilement les articles par auteur, mot-clé, catégorie ou année.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Derniers articles publiés -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <div class="flex flex-col gap-4 mb-8" style="flex-direction: column;">
+        <div>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-balance mb-0">Derniers articles publiés</h2>
+          <div class="divider" style="margin-top: 1rem; margin-bottom: 1rem;"></div>
+          <p class="text-muted text-lg" style="max-width: 36rem;">Découvrez les publications les plus récentes de notre revue.</p>
+        </div>
+        <a href="publications.html" class="btn btn-outline-primary" style="align-self: flex-start;">Voir toutes les publications →</a>
+      </div>
+      <div class="grid-3" id="home-latest">
+        <p class="text-muted">Chargement…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domaines de publication -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-balance">Domaines de publication</h2>
+        <div class="divider center"></div>
+        <p class="text-muted text-lg">La revue couvre l'ensemble des disciplines théologales, avec un accent particulier sur les perspectives africaines.</p>
+      </div>
+      <div class="grid-5">
+        <a href="publications.html" class="card text-center">
+          <div class="card-icon mx-auto" style="width: 3.5rem; height: 3.5rem; border-radius: 9999px;"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#book"/></svg></div>
+          <h3 class="font-serif font-bold text-sm mb-2">Études Bibliques</h3>
+          <p class="text-muted text-xs leading-relaxed mb-3">Exégèse, herméneutique, analyse textuelle de l'Ancien et du Nouveau Testament.</p>
+          <span class="text-xs font-medium text-primary">Voir les articles</span>
+        </a>
+        <a href="publications.html" class="card text-center">
+          <div class="card-icon mx-auto" style="width: 3.5rem; height: 3.5rem; border-radius: 9999px;"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#book"/></svg></div>
+          <h3 class="font-serif font-bold text-sm mb-2">Théologie Systématique</h3>
+          <p class="text-muted text-xs leading-relaxed mb-3">Dogmatique, christologie, pneumatologie et réflexion théologale structurée.</p>
+          <span class="text-xs font-medium text-primary">Voir les articles</span>
+        </a>
+        <a href="publications.html" class="card text-center">
+          <div class="card-icon mx-auto" style="width: 3.5rem; height: 3.5rem; border-radius: 9999px;"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#clipboard-check"/></svg></div>
+          <h3 class="font-serif font-bold text-sm mb-2">Éthique Chrétienne</h3>
+          <p class="text-muted text-xs leading-relaxed mb-3">Bioéthique, justice sociale, éthique politique et morale chrétienne appliquée.</p>
+          <span class="text-xs font-medium text-primary">Voir les articles</span>
+        </a>
+        <a href="publications.html" class="card text-center">
+          <div class="card-icon mx-auto" style="width: 3.5rem; height: 3.5rem; border-radius: 9999px;"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#book"/></svg></div>
+          <h3 class="font-serif font-bold text-sm mb-2">Histoire de l'Église</h3>
+          <p class="text-muted text-xs leading-relaxed mb-3">Histoire du christianisme en Afrique, mouvements de réveil, missions.</p>
+          <span class="text-xs font-medium text-primary">Voir les articles</span>
+        </a>
+        <a href="publications.html" class="card text-center">
+          <div class="card-icon mx-auto" style="width: 3.5rem; height: 3.5rem; border-radius: 9999px;"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#graduation-cap"/></svg></div>
+          <h3 class="font-serif font-bold text-sm mb-2">Théologie Pratique</h3>
+          <p class="text-muted text-xs leading-relaxed mb-3">Pastorale, liturgie, missiologie, éducation chrétienne et formation.</p>
+          <span class="text-xs font-medium text-primary">Voir les articles</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volumes & Archives -->
+  <section class="section bg-background">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-balance">Volumes & Archives</h2>
+        <div class="divider center"></div>
+        <p class="text-muted text-lg">Consultez et téléchargez l'ensemble des numéros de la revue, organisés par volume.</p>
+      </div>
+      <div class="grid-3" id="home-volumes">
+        <p class="text-muted">Chargement…</p>
+      </div>
+      <div class="text-center mt-6">
+        <a href="archives.html" class="btn btn-outline-primary">Voir toutes les archives</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment soumettre un article ? -->
+  <section class="section bg-primary submission-cta">
+    <div class="bg-pattern" aria-hidden="true"></div>
+    <div class="container relative" style="z-index: 1;">
+      <div class="section-title">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-balance" style="color: var(--primary-foreground);">Comment soumettre un article ?</h2>
+        <div class="divider center" style="background: var(--upc-gold);"></div>
+        <p style="color: rgba(255,255,255,0.8);">Un processus simple et transparent en trois étapes pour publier vos travaux de recherche.</p>
+      </div>
+      <div class="grid-3 mb-8">
+        <div class="step">
+          <div class="step-num"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#upload"/></svg></div>
+          <span class="num">01</span>
+          <h3>Soumission</h3>
+          <p>Créez votre compte, abonnez-vous et soumettez votre article en ligne avec les métadonnées requises.</p>
+        </div>
+        <div class="step">
+          <div class="step-num"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#clipboard-check"/></svg></div>
+          <span class="num">02</span>
+          <h3>Évaluation</h3>
+          <p>Votre article est évalué en double aveugle par des experts du domaine. Vous recevez les commentaires.</p>
+        </div>
+        <div class="step">
+          <div class="step-num"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#check"/></svg></div>
+          <span class="num">03</span>
+          <h3>Publication</h3>
+          <p>Après acceptation, votre article est publié dans un numéro de la revue avec attribution de DOI.</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="author/soumettre.html" class="btn btn-lg btn-accent">Commencer la soumission →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="logo-block">
+            <img src="images/logo_upc.png" alt="Logo UPC">
+            <div>
+              <p class="font-serif font-bold text-sm mb-0" style="color: var(--primary-foreground);">Revue Congolaise de Théologie Protestante</p>
+              <p class="text-xs mb-0" style="color: rgba(255,255,255,0.6);">UPC - Kinshasa</p>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-3" style="color: rgba(255,255,255,0.7);">Publication annuelle de l'Université Protestante au Congo.</p>
+          <p class="text-xs font-medium mt-3 italic" style="color: var(--upc-gold);">"Vérité, Foi, Liberté"</p>
+        </div>
+        <div>
+          <h3 class="footer-title">Navigation</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="archives.html">Archives</a></li>
+            <li><a href="comite.html">Comité éditorial</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Pour les auteurs</h3>
+          <ul>
+            <li><a href="author/soumettre.html">Soumettre un article</a></li>
+            <li><a href="instructions-auteurs.html">Instructions aux auteurs</a></li>
+            <li><a href="politique-editoriale.html">Processus d'évaluation</a></li>
+            <li><a href="login.html">Connexion</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Suivez-nous</h3>
+          <ul class="footer-social flex gap-3 flex-wrap" style="list-style: none; padding: 0;">
+            <li><a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a></li>
+            <li><a href="https://www.researchgate.net" target="_blank" rel="noopener" aria-label="ResearchGate"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Contact</h3>
+          <ul>
+            <li class="contact-block">
+              <span class="icon"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#map-pin"/></svg></span>
+              <span>Université Protestante au Congo, Kinshasa, RD Congo</span>
+            </li>
+            <li class="contact-block">
+              <span class="icon"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#mail"/></svg></span>
+              <a href="mailto:revue.theologie@upc.ac.cd">revue.theologie@upc.ac.cd</a>
+            </li>
+            <li class="contact-block">
+              <span class="icon"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#phone"/></svg></span>
+              <a href="tel:+243000000000">+243 000 000 000</a>
+            </li>
+            <li class="contact-block">
+              <span class="icon"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></span>
+              <a href="https://www.upc.ac.cd" target="_blank" rel="noopener">www.upc.ac.cd</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span id="year"></span> Revue de la Faculté de Théologie - UPC. Tous droits réservés.</p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="politique-editoriale.html">Politique éditoriale</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+          <a href="confidentialite.html">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>if (document.getElementById('year')) document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

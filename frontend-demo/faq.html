@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Revue Congolaise de Théologie Protestante</title>
+    <link rel="icon" href="images/logo_upc.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col page-template-2">
+  <div class="site-header-sticky-wrap">
+    <div class="topbar-utility">
+      <div class="container flex justify-between items-center">
+        <div class="topbar-social">
+          <a href="#" aria-label="Facebook"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg class="icon-svg icon-16" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a>
+        </div>
+        <div class="topbar-links flex items-center gap-4">
+          <a href="login.html">Connexion</a>
+          <a href="register.html">Inscription</a>
+          <div class="dropdown lang-dropdown">
+            <a href="#" class="lang-select" aria-haspopup="true" aria-expanded="false" id="lang-toggle">
+              <span class="lang-current">FR</span><span aria-hidden="true">▼</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="lang-toggle">
+              <a href="#">Français</a>
+              <a href="#">English</a>
+              <a href="#">Lingala</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="container inner flex justify-between">
+        <a href="index.html" class="logo">
+          <img src="images/logo_upc.png" alt="Logo UPC">
+          <div class="logo-text">
+            <p class="title">Revue Congolaise de Théologie Protestante</p>
+            <p class="sub">Université Protestante au Congo</p>
+          </div>
+        </a>
+        <nav class="nav-desktop">
+          <a href="index.html">Accueil</a>
+          <div class="dropdown">
+            <a href="presentation.html">À propos <span aria-hidden="true">▼</span></a>
+            <div class="dropdown-menu">
+              <a href="presentation.html">Présentation</a>
+              <a href="comite.html">Comité éditorial</a>
+              <a href="politique-editoriale.html">Politique éditoriale</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="publications.html">Articles <span aria-hidden="true">▼</span></a>
+            <div class="dropdown-menu">
+              <a href="publications.html">Publications</a>
+              <a href="instructions-auteurs.html">Instructions aux auteurs</a>
+            </div>
+          </div>
+          <div class="dropdown dropdown-badge">
+            <a href="archives.html">Archives <span aria-hidden="true">▼</span></a>
+            <div class="dropdown-menu">
+              <a href="archives.html">Volumes &amp; numéros</a>
+              <a href="actualites.html">Actualités</a>
+            </div>
+          </div>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <span class="header-desk-actions flex items-center gap-2">
+            <form action="search.html" method="get" class="flex items-center gap-1" role="search">
+              <input type="search" id="header-search-input" name="q" placeholder="Mot-clé, auteur, titre..." class="input input-sm" style="width: 180px;" aria-label="Rechercher">
+              <button type="submit" class="btn btn-icon btn-outline" aria-label="Rechercher"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#search"/></svg></button>
+            </form>
+            <a href="login.html" class="btn btn-sm btn-accent">Soumettre un article</a>
+          </span>
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false"><svg class="icon-svg icon-24" aria-hidden="true"><use href="images/icons.svg#menu"/></svg></button>
+        </div>
+      </div>
+      <div id="nav-mobile" class="nav-mobile" aria-hidden="true">
+        <div class="container flex flex-col gap-1">
+          <a href="index.html">Accueil</a>
+          <a href="presentation.html">À propos</a>
+          <div class="sub">
+            <a href="presentation.html">Présentation</a>
+            <a href="comite.html">Comité éditorial</a>
+            <a href="politique-editoriale.html">Politique éditoriale</a>
+          </div>
+          <a href="publications.html">Articles</a>
+          <div class="sub">
+            <a href="publications.html">Publications</a>
+            <a href="instructions-auteurs.html">Instructions aux auteurs</a>
+          </div>
+          <a href="archives.html">Archives</a>
+          <div class="sub">
+            <a href="archives.html">Volumes &amp; numéros</a>
+            <a href="actualites.html">Actualités</a>
+          </div>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+          <div class="lang-mobile flex items-center gap-2" style="padding: 0.5rem 0;">
+            <span class="text-sm">FR</span>
+            <a href="#">Français</a>
+            <a href="#">English</a>
+            <a href="#">Lingala</a>
+          </div>
+          <div class="actions">
+            <a href="login.html" class="btn btn-outline-primary">Connexion</a>
+            <a href="author/soumettre.html" class="btn btn-accent">Soumettre un article</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main class="flex-1">
+    <div class="page-content-compact page-faq">
+      <div class="banner">
+        <div class="container">
+          <h1 class="font-serif text-xl md:text-2xl font-bold">FAQ</h1>
+          <div class="divider"></div>
+          <p class="text-sm" style="color: rgba(255,255,255,0.9);">Questions fréquentes sur la revue et la soumission d'articles.</p>
+        </div>
+      </div>
+      <div class="container section">
+        <div class="card p-4 max-w-3xl mx-auto faq-card">
+          <h2 class="font-serif text-base font-bold mb-1">Comment soumettre un article ?</h2>
+          <p class="text-muted text-sm mb-4">Créez un compte auteur, connectez-vous et utilisez le formulaire de soumission en ligne. Voir <a href="author/soumettre.html">Soumettre un article</a> et <a href="instructions-auteurs.html">Instructions aux auteurs</a>.</p>
+          <h2 class="font-serif text-base font-bold mb-1">Quel est le délai d'évaluation ?</h2>
+          <p class="text-muted text-sm mb-4">L'évaluation en double aveugle prend généralement entre 2 et 4 mois. Vous serez informé par email à chaque étape.</p>
+          <h2 class="font-serif text-base font-bold mb-1">La revue est-elle en accès ouvert ?</h2>
+          <p class="text-muted text-sm mb-0">Oui. Les articles publiés sont accessibles gratuitement en ligne. Les auteurs conservent leurs droits ; les articles sont sous licence CC BY-NC 4.0.</p>
+          <p class="mt-4 mb-0"><a href="contact.html" class="btn btn-sm btn-primary">Nous contacter</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="logo-block">
+            <img src="images/logo_upc.png" alt="Logo UPC">
+            <div>
+              <p class="font-serif font-bold text-sm mb-0" style="color: var(--primary-foreground);">Revue Congolaise de Théologie Protestante</p>
+              <p class="text-xs mb-0" style="color: rgba(255,255,255,0.6);">UPC - Kinshasa</p>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-3" style="color: rgba(255,255,255,0.7);">Publication annuelle de l'Université Protestante au Congo.</p>
+          <p class="text-xs font-medium mt-3 italic" style="color: var(--upc-gold);">"Vérité, Foi, Liberté"</p>
+        </div>
+        <div>
+          <h3 class="footer-title">Navigation</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="archives.html">Archives</a></li>
+            <li><a href="comite.html">Comité éditorial</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Pour les auteurs</h3>
+          <ul>
+            <li><a href="author/soumettre.html">Soumettre un article</a></li>
+            <li><a href="instructions-auteurs.html">Instructions aux auteurs</a></li>
+            <li><a href="politique-editoriale.html">Processus d'évaluation</a></li>
+            <li><a href="login.html">Connexion</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Suivez-nous</h3>
+          <ul class="footer-social flex gap-3 flex-wrap" style="list-style: none; padding: 0;">
+            <li><a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#globe"/></svg></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-title">Contact</h3>
+          <ul>
+            <li class="contact-block">
+              <span class="icon"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#map-pin"/></svg></span>
+              <span>Université Protestante au Congo, Kinshasa, RD Congo</span>
+            </li>
+            <li class="contact-block">
+              <span class="icon"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#mail"/></svg></span>
+              <a href="mailto:revue.theologie@upc.ac.cd">revue.theologie@upc.ac.cd</a>
+            </li>
+            <li class="contact-block">
+              <span class="icon"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#phone"/></svg></span>
+              <a href="tel:+243000000000">+243 000 000 000</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span id="year"></span> Revue de la Faculté de Théologie - UPC. Tous droits réservés.</p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="politique-editoriale.html">Politique éditoriale</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+          <a href="confidentialite.html">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>if (document.getElementById('year')) document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

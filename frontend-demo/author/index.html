@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace auteur | Revue Congolaise de Théologie Protestante</title>
+  <link rel="icon" href="../images/logo_upc.png" type="image/png">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="dashboard-layout min-h-screen flex flex-col">
+  <div class="dashboard-topbar">
+    <button type="button" class="dashboard-mobile-menu" id="dashboard-menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <svg class="icon-svg icon-24" aria-hidden="true"><use href="../images/icons.svg#menu"/></svg>
+    </button>
+    <div class="flex items-center gap-4 flex-wrap">
+      <a href="../index.html" class="flex items-center gap-2">
+        <img src="../images/logo_upc.png" alt="Logo UPC" width="36" height="36">
+        <span class="dashboard-topbar-brand font-serif font-bold text-primary">Revue Congolaise de Théologie Protestante</span>
+      </a>
+      <span class="dashboard-topbar-sep text-muted">|</span>
+      <span class="text-sm font-medium">Espace Auteur</span>
+    </div>
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <a href="index.html">Dashboard</a>
+      <a href="abonnement.html" class="breadcrumb-optional text-primary">Abonnement</a>
+      <a href="notifications.html" class="breadcrumb-optional text-primary">Notifications</a>
+      <a href="../login.html" class="ml-4 text-accent logout-link">Déconnexion</a>
+    </div>
+  </div>
+  <div class="dashboard-body">
+    <div class="dashboard-sidebar-backdrop" id="dashboard-sidebar-backdrop" aria-hidden="true"></div>
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <div class="sidebar-inner">
+        <p class="sidebar-title">Espace auteur</p>
+        <nav>
+          <a href="index.html" class="active">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#tag"/></svg>
+            Tableau de bord
+          </a>
+          <a href="articles.html">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#file-text"/></svg>
+            Mes articles
+          </a>
+          <a href="s-abonner.html">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#award"/></svg>
+            S'abonner
+          </a>
+          <a href="abonnement.html">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#award"/></svg>
+            Abonnement
+          </a>
+          <a href="notifications.html">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#mail"/></svg>
+            Notifications
+          </a>
+          <a href="profil.html">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#user"/></svg>
+            Mon profil
+          </a>
+          <a href="soumettre.html">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#upload"/></svg>
+            Soumettre un article
+          </a>
+          <a href="../index.html">
+            <svg class="icon-svg icon-20" aria-hidden="true"><use href="../images/icons.svg#globe"/></svg>
+            Voir le site
+          </a>
+        </nav>
+      </div>
+    </aside>
+    <div class="dashboard-content-wrap">
+      <main class="dashboard-main">
+        <div class="dashboard-header">
+          <h1>Tableau de bord</h1>
+          <p>Résumé et liens (Phase 8).</p>
+        </div>
+      </main>
+      <footer class="site-footer" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
+        <div class="container">
+          <div class="footer-bottom">
+            <p class="mb-0">&copy; <span id="year"></span> Revue Congolaise de Théologie Protestante - UPC. Espace auteur.</p>
+            <a href="../login.html" class="logout-link">Déconnexion</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script>if (document.getElementById('year')) document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../js/data.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
