@@ -30,7 +30,12 @@
     <div class="dashboard-content-wrap">
       <main class="dashboard-main">
         <h1>S'abonner</h1>
-        <p>Formulaire d'abonnement (Phase 8).</p>
+        <form id="s-abonner-form">
+          <p><label>Montant (démo)</label><input type="number" name="montant" value="25000" min="1"></p>
+          <p><label>Moyen de paiement</label><select name="moyen"><option value="orange_money">Orange Money</option><option value="mpesa">M-Pesa</option><option value="autre">Autre</option></select></p>
+          <button type="submit">Souscrire (démo)</button>
+        </form>
+        <p id="s-abonner-message" class="mt-2"></p>
       </main>
       <footer class="site-footer"><div class="container"><p>© <span id="year"></span> Revue Congolaise de Théologie Protestante - UPC.</p></div></footer>
     </div>

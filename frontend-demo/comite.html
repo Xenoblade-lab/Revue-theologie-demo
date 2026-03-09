@@ -24,9 +24,9 @@
               <span class="lang-current">FR</span><span aria-hidden="true">▼</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="lang-toggle">
-              <a href="#">Français</a>
-              <a href="#">English</a>
-              <a href="#">Lingala</a>
+              <a href="#" data-lang="fr">Français</a>
+              <a href="#" data-lang="en">English</a>
+              <a href="#" data-lang="ln">Lingala</a>
             </div>
           </div>
         </div>
@@ -102,9 +102,9 @@
           <a href="faq.html">FAQ</a>
           <div class="lang-mobile flex items-center gap-2" style="padding: 0.5rem 0;">
             <span class="text-sm">FR</span>
-            <a href="#">Français</a>
-            <a href="#">English</a>
-            <a href="#">Lingala</a>
+            <a href="#" data-lang="fr">Français</a>
+            <a href="#" data-lang="en">English</a>
+            <a href="#" data-lang="ln">Lingala</a>
           </div>
           <div class="actions">
             <a href="login.html" class="btn btn-outline-primary">Connexion</a>
@@ -118,46 +118,46 @@
     <div class="page-content-compact page-comite">
       <div class="banner">
         <div class="container">
-          <h1 class="font-serif text-xl md:text-2xl font-bold text-balance">Comité Editorial</h1>
+          <h1 class="font-serif text-xl md:text-2xl font-bold text-balance" data-i18n="comite.title">Comité Editorial</h1>
           <div class="divider"></div>
-          <p class="text-sm" style="color: rgba(255,255,255,0.9);">Les membres du comité de rédaction et du comité scientifique de la revue.</p>
-          <p class="text-sm mt-2" style="color: rgba(255,255,255,0.85);">Les évaluations des articles sont réalisées par des membres du comité éditorial (double aveugle).</p>
+          <p class="text-sm" style="color: rgba(255,255,255,0.9);" data-i18n="comite.intro">Les membres du comité de rédaction et du comité scientifique de la revue.</p>
+          <p class="text-sm mt-2" style="color: rgba(255,255,255,0.85);" data-i18n="comite.evaluations_by_committee">Les évaluations des articles sont réalisées par des membres du comité éditorial (double aveugle).</p>
         </div>
       </div>
       <section class="container section">
         <div class="card max-w-3xl mx-auto p-4 comite-director-card" style="border-width: 2px; border-color: var(--primary);">
           <div class="flex items-center gap-3 mb-3">
-            <div class="card-icon comite-director-icon" style="width: 2.75rem; height: 2.75rem; border-radius: 9999px; background: var(--primary); color: var(--primary-foreground);">★</div>
+            <div class="card-icon comite-director-icon" style="width: 2.75rem; height: 2.75rem; border-radius: 9999px; background: var(--primary); color: var(--primary-foreground);"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#award"/></svg></div>
             <div>
-              <h2 class="font-serif text-base font-bold">Directeur de la Revue</h2>
-              <p class="text-accent font-medium text-xs">Faculté de Théologie, UPC - Kinshasa</p>
-              <p class="mb-0 mt-2" style="color: var(--foreground); font-weight: 600; font-size: 0.875rem;">Rédacteur en Chef : Prof. KALOMBO Kapuku Sébastien</p>
+              <h2 class="font-serif text-base font-bold" data-i18n="comite.director">Directeur de la Revue</h2>
+              <p class="text-accent font-medium text-xs" data-i18n="comite.faculty">Faculté de Théologie, UPC - Kinshasa</p>
+              <p class="mb-0 mt-2" style="color: var(--foreground); font-weight: 600; font-size: 0.875rem;"><span data-i18n="comite.redacteur_chef">Rédacteur en Chef</span> : <span data-i18n="comite.redacteur_chef_name">Prof. KALOMBO Kapuku Sébastien</span></p>
             </div>
           </div>
-          <p class="text-muted text-sm mb-0">Le comité de rédaction assure la gestion éditoriale de la revue. Contact : <a href="mailto:revue.theologie@upc.ac.cd">revue.theologie@upc.ac.cd</a></p>
+          <p class="text-muted text-sm mb-0"><span data-i18n="comite.redac_default">Le comité de rédaction assure la gestion éditoriale de la revue. Contact :</span> <a href="mailto:revue.theologie@upc.ac.cd">revue.theologie@upc.ac.cd</a></p>
         </div>
       </section>
       <section class="section bg-secondary comite-redaction">
         <div class="container">
-          <h2 class="font-serif text-lg md:text-xl font-bold text-center mb-2">Comité de Rédaction</h2>
+          <h2 class="font-serif text-lg md:text-xl font-bold text-center mb-2" data-i18n="comite.redaction">Comité de Rédaction</h2>
           <div class="divider center"></div>
-          <p class="text-muted text-center max-w-2xl mx-auto mb-4 text-sm">Les membres internes de la Faculté de Théologie qui assurent la gestion éditoriale de la revue.</p>
+          <p class="text-muted text-center max-w-2xl mx-auto mb-4 text-sm" data-i18n="comite.redaction_intro">Les membres internes de la Faculté de Théologie qui assurent la gestion éditoriale de la revue.</p>
           <div class="grid-3 comite-cards-grid">
-            <div class="card p-4"><div class="card-icon mb-2">🎓</div><h3 class="font-serif font-bold text-sm">Comité de Rédaction</h3><p class="text-muted text-xs mt-1">UPC - Kinshasa</p></div>
+            <div class="card p-4"><div class="card-icon mb-2"><svg class="icon-svg icon-20" aria-hidden="true"><use href="images/icons.svg#graduation-cap"/></svg></div><h3 class="font-serif font-bold text-sm" data-i18n="comite.redaction">Comité de Rédaction</h3><p class="text-muted text-xs mt-1">UPC - Kinshasa</p></div>
           </div>
         </div>
       </section>
       <section class="container section comite-scientific">
-        <h2 class="font-serif text-lg md:text-xl font-bold text-center mb-2">Comité Scientifique</h2>
+        <h2 class="font-serif text-lg md:text-xl font-bold text-center mb-2" data-i18n="comite.scientific">Comité Scientifique</h2>
         <div class="divider center"></div>
-        <p class="text-muted text-center max-w-2xl mx-auto mb-4 text-sm">Des experts qui garantissent la qualité scientifique et la rigueur des publications.</p>
-        <div class="card max-w-3xl mx-auto p-4"><p class="text-muted text-sm mb-0">Le comité scientifique international accompagne la revue dans son processus d'évaluation.</p></div>
+        <p class="text-muted text-center max-w-2xl mx-auto mb-4 text-sm" data-i18n="comite.scientific_intro">Des experts qui garantissent la qualité scientifique et la rigueur des publications.</p>
+        <div class="card max-w-3xl mx-auto p-4"><p class="text-muted text-sm mb-0" data-i18n="comite.scientific_default">Le comité scientifique international accompagne la revue dans son processus d'évaluation.</p></div>
       </section>
       <section class="section bg-primary comite-contact">
         <div class="container text-center">
-          <h2 class="font-serif text-base md:text-lg font-bold mb-2" style="color: var(--primary-foreground);">Contacter le Comité Editorial</h2>
-          <p class="mb-4 max-w-xl mx-auto text-xs" style="color: rgba(255,255,255,0.7);">Pour toute question concernant la soumission d'articles ou la politique éditoriale.</p>
-          <a href="mailto:revue.theologie@upc.ac.cd" class="btn btn-sm" style="background: var(--upc-gold); color: var(--foreground);">✉ revue.theologie@upc.ac.cd</a>
+          <h2 class="font-serif text-base md:text-lg font-bold mb-2" style="color: var(--primary-foreground);" data-i18n="comite.contact_title">Contacter le Comité Editorial</h2>
+          <p class="mb-4 max-w-xl mx-auto text-xs" style="color: rgba(255,255,255,0.7);" data-i18n="comite.contact_intro">Pour toute question concernant la soumission d'articles ou la politique éditoriale.</p>
+          <a href="mailto:revue.theologie@upc.ac.cd" class="btn btn-sm" style="background: var(--upc-gold); color: var(--foreground);"><svg class="icon-svg icon-16" style="vertical-align: middle;" aria-hidden="true"><use href="images/icons.svg#mail"/></svg> revue.theologie@upc.ac.cd</a>
         </div>
       </section>
     </div>
@@ -240,6 +240,8 @@
 
   <script src="js/data.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/lang.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

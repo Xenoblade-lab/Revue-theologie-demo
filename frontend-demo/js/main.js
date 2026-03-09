@@ -1,28 +1,101 @@
 /**
  * Revue de la Faculte de Theologie - UPC - Script page test (index_2.html)
  * Menu mobile, carousels, formulaire newsletter, sondage.
+ * Phase 10.1 : Header — Connexion / Nom + Déconnexion selon sessionStorage.
  */
 (function () {
   'use strict';
 
-  // Dropdown langue : empêcher navigation sur le lien # + garder le menu ouvert au survol (délai pour atteindre le menu)
+  /** Phase 10.1 — Sur les pages publiques (sans dashboard), afficher « Bonjour, Nom » + lien dashboard + Déconnexion si connecté */
+  function updateHeaderAuth() {
+    if (document.querySelector('.dashboard-sidebar')) return;
+    var auth = window.RevueDemo && window.RevueDemo.auth;
+    var user = auth && auth.getSessionUser ? auth.getSessionUser() : null;
+    var dashboardPath = auth && auth.getDashboardPathForRole && user ? auth.getDashboardPathForRole(user.role) : '';
+    var name = user && user.name ? user.name : (user && user.email ? user.email : '');
+    function escapeHtml(s) { if (!s) return ''; var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    if (user && name && dashboardPath) {
+      var authLinks = document.getElementById('header-auth-links');
+      var authMobile = document.getElementById('header-auth-mobile');
+      var html = 'Bonjour, <a href="' + dashboardPath + '">' + escapeHtml(name) + '</a> | <a href="index.html" class="logout-link">Déconnexion</a>';
+      if (authLinks) authLinks.innerHTML = html;
+      if (authMobile) authMobile.innerHTML = '<a href="' + dashboardPath + '" class="btn btn-outline-primary">' + escapeHtml(name) + '</a> <a href="index.html" class="btn btn-accent logout-link">Déconnexion</a>';
+      if (!authLinks) {
+        var topbar = document.querySelector('.topbar-links');
+        var loginLink = topbar && topbar.querySelector('a[href="login.html"]');
+        var registerLink = topbar && topbar.querySelector('a[href="register.html"]');
+        if (loginLink && registerLink) {
+          var span = document.createElement('span');
+          span.id = 'header-auth-links';
+          span.className = 'flex items-center gap-2';
+          span.innerHTML = html;
+          loginLink.parentNode.insertBefore(span, loginLink);
+          loginLink.remove();
+          registerLink.remove();
+        }
+      }
+      var mobileActions = document.querySelector('#nav-mobile .actions');
+      if (mobileActions && !authMobile) {
+        mobileActions.innerHTML = '<a href="' + dashboardPath + '" class="btn btn-outline-primary">' + escapeHtml(name) + '</a> <a href="index.html" class="btn btn-accent logout-link">Déconnexion</a>';
+      }
+    }
+  }
+  updateHeaderAuth();
+
+  // Dropdown langue : ouvrir au clic ou au survol ; clic sur FR/EN/Lingala = changer langue
   var langToggle = document.getElementById('lang-toggle');
   var langDropdown = langToggle ? langToggle.closest('.lang-dropdown') : null;
   var langMenu = langDropdown ? langDropdown.querySelector('.dropdown-menu') : null;
-  if (langToggle) langToggle.addEventListener('click', function (e) { e.preventDefault(); });
+  if (langToggle) {
+    langToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (langDropdown) langDropdown.classList.toggle('open');
+      var expanded = langDropdown && langDropdown.classList.contains('open');
+      langToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    });
+  }
   if (langDropdown && langMenu) {
     var langCloseTimer = null;
     function openLang() {
       if (langCloseTimer) { clearTimeout(langCloseTimer); langCloseTimer = null; }
       langDropdown.classList.add('open');
+      if (langToggle) langToggle.setAttribute('aria-expanded', 'true');
     }
     function scheduleCloseLang() {
-      langCloseTimer = setTimeout(function () { langDropdown.classList.remove('open'); langCloseTimer = null; }, 180);
+      langCloseTimer = setTimeout(function () {
+        langDropdown.classList.remove('open');
+        if (langToggle) langToggle.setAttribute('aria-expanded', 'false');
+        langCloseTimer = null;
+      }, 180);
     }
     langDropdown.addEventListener('mouseenter', openLang);
     langDropdown.addEventListener('mouseleave', scheduleCloseLang);
     langMenu.addEventListener('mouseenter', openLang);
     langMenu.addEventListener('mouseleave', scheduleCloseLang);
+    var langLinks = langMenu.querySelectorAll('a[data-lang]');
+    for (var i = 0; i < langLinks.length; i++) {
+      langLinks[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        var code = this.getAttribute('data-lang');
+        if (code && window.RevueDemo && window.RevueDemo.lang) {
+          window.RevueDemo.lang.setLang(code);
+          window.RevueDemo.lang.applyLang();
+          if (langDropdown) langDropdown.classList.remove('open');
+          if (langToggle) langToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  }
+  var langMobileLinks = document.querySelectorAll('.lang-mobile a[data-lang]');
+  for (var j = 0; j < langMobileLinks.length; j++) {
+    langMobileLinks[j].addEventListener('click', function (e) {
+      e.preventDefault();
+      var code = this.getAttribute('data-lang');
+      if (code && window.RevueDemo && window.RevueDemo.lang) {
+        window.RevueDemo.lang.setLang(code);
+        window.RevueDemo.lang.applyLang();
+      }
+    });
   }
 
   // Menu mobile
@@ -30,16 +103,20 @@
   var navMobile = document.getElementById('nav-mobile');
   if (menuToggle && navMobile) {
     menuToggle.addEventListener('click', function () {
-      navMobile.classList.toggle('open');
-      var aria = navMobile.classList.contains('open') ? 'true' : 'false';
-      menuToggle.setAttribute('aria-expanded', aria);
+      var isOpen = navMobile.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navMobile.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     });
   }
 
   var mobileLinks = document.querySelectorAll('#nav-mobile a');
   mobileLinks.forEach(function (link) {
     link.addEventListener('click', function () {
-      if (navMobile) navMobile.classList.remove('open');
+      if (navMobile) {
+        navMobile.classList.remove('open');
+        navMobile.setAttribute('aria-hidden', 'true');
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 

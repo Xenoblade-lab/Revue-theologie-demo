@@ -20,6 +20,7 @@
       <p class="sidebar-title">Espace évaluateur</p>
       <nav>
         <a href="index.html">Tableau de bord</a>
+        <a href="evaluation.html" class="active">Évaluation</a>
         <a href="terminees.html">Évaluations terminées</a>
         <a href="historique.html">Historique</a>
         <a href="profil.html">Profil</a>
@@ -30,7 +31,14 @@
     <div class="dashboard-content-wrap">
       <main class="dashboard-main">
         <h1>Évaluation d'article</h1>
-        <p>Formulaire d'évaluation (Phase 9). Contenu à remplir via JS selon <code>?id=</code>.</p>
+        <div id="reviewer-evaluation-content"><p>Chargement…</p></div>
+        <form id="reviewer-evaluation-form" class="mt-3" style="display:none;">
+          <p><label>Recommandation</label><select name="recommendation" class="input"><option value="">—</option><option value="accepte">Accepter</option><option value="refuse">Refuser</option><option value="revision">Révision mineure</option><option value="revision_majeure">Révision majeure</option></select></p>
+          <p><label>Commentaire (public)</label><textarea name="commentaires_public" class="input" rows="4"></textarea></p>
+          <p><label>Note (0-10)</label><input type="number" name="note_finale" class="input" min="0" max="10" step="0.5" value=""></p>
+          <button type="submit" class="btn btn-primary">Enregistrer l'évaluation</button>
+        </form>
+        <p id="reviewer-evaluation-message" class="mt-2"></p>
       </main>
       <footer class="site-footer"><div class="container"><p>© <span id="year"></span> Revue Congolaise de Théologie Protestante - UPC.</p></div></footer>
     </div>

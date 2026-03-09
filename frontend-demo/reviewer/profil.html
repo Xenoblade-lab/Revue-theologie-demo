@@ -30,7 +30,13 @@
     <div class="dashboard-content-wrap">
       <main class="dashboard-main">
         <h1>Mon profil</h1>
-        <p>Formulaire profil (Phase 9).</p>
+        <form id="reviewer-profil-form">
+          <p><label>Nom</label><input type="text" name="nom"></p>
+          <p><label>Prénom</label><input type="text" name="prenom"></p>
+          <p><label>Email</label><input type="email" name="email"></p>
+          <button type="submit">Enregistrer</button>
+        </form>
+        <p id="reviewer-profil-message"></p>
       </main>
       <footer class="site-footer"><div class="container"><p>© <span id="year"></span> Revue Congolaise de Théologie Protestante - UPC.</p></div></footer>
     </div>

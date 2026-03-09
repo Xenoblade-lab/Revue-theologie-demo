@@ -81,6 +81,10 @@
         if (messageEl) { messageEl.textContent = 'Veuillez remplir email et mot de passe.'; messageEl.style.color = 'var(--danger, #c00)'; }
         return;
       }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+        if (messageEl) { messageEl.textContent = 'Format d\'email invalide.'; messageEl.style.color = 'var(--danger, #c00)'; }
+        return;
+      }
       var data = window.RevueDemo && window.RevueDemo.data;
       if (!data || !data.getUserByEmail) {
         if (messageEl) { messageEl.textContent = 'Erreur démo : données non chargées.'; messageEl.style.color = 'var(--danger, #c00)'; }
@@ -111,8 +115,12 @@
       var email = (form.querySelector('input[name="email"]') || form.querySelector('input#reg-email') || {}).value;
       var password = (form.querySelector('input[name="password"]') || form.querySelector('input#reg-password') || {}).value;
       if (!nom) nom = (form.querySelector('input#reg-name') || {}).value;
-      if (!email || !password) {
+      if (!nom || !email || !password) {
         if (messageEl) { messageEl.textContent = 'Veuillez remplir tous les champs obligatoires.'; messageEl.style.color = 'var(--danger, #c00)'; }
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+        if (messageEl) { messageEl.textContent = 'Format d\'email invalide.'; messageEl.style.color = 'var(--danger, #c00)'; }
         return;
       }
       var data = window.RevueDemo && window.RevueDemo.data;
@@ -147,16 +155,17 @@
     });
   }
 
-  /** Phase 6.5 — Déconnexion : clear sessionStorage puis redirection */
+  /** Phase 6.5 — Déconnexion : clear sessionStorage puis redirection (toutes les pages, y compris header public) */
   function bindLogoutLinks() {
-    var path = (typeof location !== 'undefined' && location.pathname) ? location.pathname : '';
-    if (path.indexOf('/admin/') === -1 && path.indexOf('/author/') === -1 && path.indexOf('/reviewer/') === -1) return;
     var links = document.querySelectorAll('a.logout-link');
     for (var i = 0; i < links.length; i++) {
       links[i].addEventListener('click', function (e) {
         e.preventDefault();
         clearSession();
-        location.href = this.getAttribute('href') || '../login.html';
+        var href = this.getAttribute('href');
+        var path = (typeof location !== 'undefined' && location.pathname) ? location.pathname : '';
+        var isDashboard = path.indexOf('/admin/') !== -1 || path.indexOf('/author/') !== -1 || path.indexOf('/reviewer/') !== -1;
+        location.href = (href && href !== '#') ? href : (isDashboard ? '../index.html' : 'index.html');
       });
     }
   }

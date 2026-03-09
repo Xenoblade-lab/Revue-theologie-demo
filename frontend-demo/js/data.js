@@ -50,6 +50,15 @@
       comite_editorial: [
         { id: 1, user_id: 3, ordre: 1, titre_affiche: 'Rédacteur', actif: true, nom: 'Ngoma', prenom: 'Marie', email: 'reviewer@revue.cd', role: 'redacteur' },
         { id: 2, user_id: 5, ordre: 2, titre_affiche: 'Rédacteur en chef', actif: true, nom: 'Tshimanga', prenom: 'Anne', email: 'redacteur@revue.cd', role: 'redacteur en chef' }
+      ],
+      revisions: [
+        { id: 1, article_id: 1, version: 1, date: '2024-01-10', comment: 'Version initiale soumise', statut_avant: null, statut_apres: 'soumis' },
+        { id: 2, article_id: 1, version: 2, date: '2024-02-01', comment: 'Révision après évaluation', statut_avant: 'en_revision', statut_apres: 'valide' },
+        { id: 3, article_id: 3, version: 1, date: '2024-05-01', comment: 'Soumis pour évaluation', statut_avant: null, statut_apres: 'en_revision' }
+      ],
+      reviewer_historique: [
+        { id: 1, user_id: 3, date: '2024-02-01', action: 'evaluation_soumise', libelle: 'Évaluation soumise pour « Théologie contextuelle en Afrique »' },
+        { id: 2, user_id: 3, date: '2024-05-15', action: 'evaluation_assignee', libelle: 'Évaluation assignée : « Éthique chrétienne et justice sociale »' }
       ]
     };
   }
@@ -259,6 +268,22 @@
   function getComiteEditorial() {
     if (!state) loadState();
     return state.comite_editorial.slice().sort(function (a, b) { return (a.ordre || 0) - (b.ordre || 0); });
+  }
+
+  function getRevisionsByArticleId(articleId) {
+    if (!state) loadState();
+    articleId = parseInt(articleId, 10);
+    var list = (state.revisions || []).filter(function (r) { return r.article_id === articleId; });
+    list.sort(function (a, b) { return (a.date || '').localeCompare(b.date || ''); });
+    return list;
+  }
+
+  function getReviewerHistorique(userId) {
+    if (!state) loadState();
+    userId = parseInt(userId, 10);
+    var list = (state.reviewer_historique || []).filter(function (h) { return h.user_id === userId; });
+    list.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
+    return list;
   }
 
   // --- Mutators (modifient state puis saveState) ---
@@ -519,6 +544,8 @@
     getEvaluationById: getEvaluationById,
     getEvaluationsByArticleId: getEvaluationsByArticleId,
     getComiteEditorial: getComiteEditorial,
+    getRevisionsByArticleId: getRevisionsByArticleId,
+    getReviewerHistorique: getReviewerHistorique,
     markNotificationRead: markNotificationRead,
     markAllNotificationsRead: markAllNotificationsRead,
     addArticle: addArticle,
